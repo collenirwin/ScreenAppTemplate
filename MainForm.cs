@@ -72,6 +72,13 @@ namespace $safeprojectname$ {
             InitializeComponent();
         }
 
+        protected override void OnLoad(EventArgs e) {
+            base.OnLoad(e);
+
+            // switch to HomeScreen immediately after loading
+            switchScreen(new HomeScreen(), false);
+        }
+
         #endregion
     }
 }

@@ -16,6 +16,10 @@
   <TemplateContent>
     <Project TargetFileName="ScreenAppTemplate.csproj" File="ScreenAppTemplate.csproj" ReplaceParameters="true">
       <ProjectItem ReplaceParameters="true" TargetFileName="App.config">App.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Constants.cs">Constants.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="HomeScreen.cs">HomeScreen.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="HomeScreen.Designer.cs">HomeScreen.Designer.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="HomeScreen.resx">HomeScreen.resx</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="MainForm.cs">MainForm.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="MainForm.Designer.cs">MainForm.Designer.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="MainForm.resx">MainForm.resx</ProjectItem>

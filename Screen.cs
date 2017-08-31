@@ -8,29 +8,28 @@ namespace $safeprojectname$ {
     /// </summary>
     public partial class Screen : UserControl {
 
-        public string title { get; private set; }
+        string _title;
+
+        /// <summary>
+        /// Sets MainForm.instance.Text
+        /// </summary>
+        public string title {
+            get {
+                return _title;
+            }
+            set {
+                _title = value;
+                MainForm.instance.Text = value;
+            }
+        }
 
         /// <summary>
         /// Constructor for Screen
         /// </summary>
-        /// <param name="title">
-        /// Title to use for MainForm.instance.Text. 
-        /// If title == "", MainForm.instance.Text is left untouched.
-        /// </param>
-        /// </param>
-        public Screen(string title = "") {
-            InitializeComponent();
-
-            this.title = title;
-            if (title != "") {
-                MainForm.instance.Text = title;
-            }
-        }
-
-        // needed so that inherited classes can use designer
-        [Obsolete("For designer use only", true)]
         public Screen() {
             InitializeComponent();
+
+            // optional: set defaults here
         }
     }
 }
