@@ -16,6 +16,8 @@ namespace $safeprojectname$ {
     public partial class HomeScreen : Screen {
 
         public HomeScreen() : base() {
+            InitializeComponent();
+
             // set title to Home - $safeprojectname$
             title = "Home - " + Constants.APP_NAME; 
         }

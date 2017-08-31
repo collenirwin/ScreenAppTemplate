@@ -54,16 +54,27 @@ namespace $safeprojectname$ {
         /// <param name="newScreen">Screen to switch to</param>
         /// <param name="disposeOld">Call the Dispose method of the old Screen?</param>
         public void switchScreen(Screen newScreen, bool disposeOld) {
-            if (disposeOld && this.currentScreen != null) {
+            // dispose the last currentScreen if we are asked to, and if we can
+            if (disposeOld && this.currentScreen != null)
+            {
                 this.currentScreen.Dispose();
             }
 
+            // set the new currentScreen
             this.currentScreen = newScreen;
 
-            this.Controls.Add(currentScreen);
-            this.currentScreen.Dock = DockStyle.Fill;
-            this.currentScreen.Show();
+            // add newScreen to this.Controls if we haven't already
+            if (!this.Controls.Contains(newScreen))
+            {
+                this.Controls.Add(newScreen);
+            }
 
+            // make sure newScreen is where it should be
+            this.currentScreen.Show();
+            this.currentScreen.BringToFront();
+            this.currentScreen.Dock = DockStyle.Fill;
+            this.currentScreen.Select();
+            this.currentScreen.Focus();
         }
 
         #endregion
